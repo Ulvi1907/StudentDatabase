@@ -6,21 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="index" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Student Management System</title>
 </head>
 <body>
 <h1>Student Management System</h1>
-<hr/>
+<hr/> <br/>
 
-<form method="get" action="/">
-    Id : <input type="text" name="id"/> <br/>
-    Password : <input type="text" name="password"/> <br/>
-    <input type="submit" value="Login">
-    &nbsp; &nbsp; <a href="#" >Forgot password</a> &nbsp;
+<index:form modelAttribute="form1" method="post" action="/">
+    Id :  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<index:input path="student_id"/> <br/> <br/>
+    Password : <index:password path="password"/> <br/> <br/>
+    <input type="submit" value="Login">&nbsp; &nbsp; &nbsp;
     <a href="/register">Register</a>
-</form>
+</index:form>
 
 </body>
 </html>

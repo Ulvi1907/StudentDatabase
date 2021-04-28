@@ -6,19 +6,34 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Register</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-<form method="get" action="register">
-    Name : <input type="text" name="name"> <br/>
-    Surname : <input type="text" name="surname"> <br/>
-    Email : <input type="email" name="email"> <br/>
-    Student Id : <input type="text" name="student id"> <br/>
-    Password : <input type="password" name="password"> <br/>
-    <input type="submit" value="Submit"> &nbsp; <input type="reset" value="Reset">
-</form>
+<form:form modelAttribute="form" action="register" method="post">
+    <h1>Sign up</h1><br/>
+
+    Name : &nbsp; &nbsp; &nbsp; <form:input path="name"/>
+    <br/>
+    <span><form:errors path="name" cssClass="error"/></span> <br/>
+    Surname : &nbsp; <form:input path="surname"/>
+    <br/>
+    <span><form:errors path="surname" cssClass="error"/></span><br/>
+    Student Id : <form:input path="student_id"/>
+    <br/>
+    <span><form:errors path="student_id" cssClass="error"/></span><br/>
+    Password : &nbsp; <form:password path="password"/>
+    <br/>
+    <span><form:errors path="password" cssClass="error"/></span><br/>
+    <input type="submit" value="Sign Up">
+</form:form>
 
 </body>
 </html>
