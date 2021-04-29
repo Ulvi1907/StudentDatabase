@@ -8,14 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-<head>
-    <title>Register</title>
-    <style>
-        .error {
-            color: red;
-        }
-    </style>
-</head>
 <body>
 <form:form modelAttribute="form" action="register" method="post">
     <h1>Sign up</h1><br/>
@@ -29,6 +21,8 @@
     Student Id : <form:input path="student_id"/>
     <br/>
     <span><form:errors path="student_id" cssClass="error"/></span><br/>
+    Grade year : <form:input path="gradeYear"/> <br/>
+    <span><form:errors path="gradeYear" cssClass="error"/> </span> <br/>
     Password : &nbsp; <form:password path="password"/>
     <br/>
     <span><form:errors path="password" cssClass="error"/></span><br/>
@@ -36,4 +30,12 @@
 </form:form>
 
 </body>
+<head>
+    <title>Register</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
 </html>

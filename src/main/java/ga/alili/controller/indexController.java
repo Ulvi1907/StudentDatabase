@@ -10,16 +10,18 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/")
 public class indexController {
     @Autowired
     private RegisterFormValidator registerFormValidator;
 
-    @InitBinder
-    public void initFormValidator(WebDataBinder binder){
-        binder.setValidator(registerFormValidator);
-    }
+//    @InitBinder
+//    public void initFormValidator(WebDataBinder binder){
+//        binder.setValidator(registerFormValidator);
+//    }
 
     @GetMapping("/")
     public ModelAndView index(){
@@ -27,6 +29,14 @@ public class indexController {
         RequestForm form1 = new RequestForm();
         mav.addObject("form1", form1);
         return mav;
+    }
+
+    @GetMapping("/forgot")
+    public  ModelAndView forgot(){
+        ModelAndView modelAndView = new ModelAndView("forgot");
+        RequestForm form2 = new RequestForm();
+        modelAndView.addObject("form2", form2);
+        return modelAndView;
     }
     @GetMapping("/register")
     public ModelAndView register() {
@@ -36,7 +46,7 @@ public class indexController {
         return modelAndView;
     }
     @PostMapping("/register")
-    public ModelAndView saveRegister(@ModelAttribute("form") @Validated RequestForm form, BindingResult result){
+    public ModelAndView saveRegister(@ModelAttribute("form") @Valid RequestForm form, BindingResult result){
         ModelAndView mav = new ModelAndView("register");
         System.out.println("request form = "+form);
 

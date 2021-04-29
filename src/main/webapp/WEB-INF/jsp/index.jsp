@@ -12,13 +12,14 @@
     <title>Student Management System</title>
 </head>
 <body>
-<h1>Student Management System</h1>
+<h1>Student Information System</h1>
 <hr/> <br/>
 
 <index:form modelAttribute="form1" method="post" action="/">
     Id :  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<index:input path="student_id"/> <br/> <br/>
     Password : <index:password path="password"/> <br/> <br/>
-    <input type="submit" value="Login">&nbsp; &nbsp; &nbsp;
+    <a href="/forgot">Can't access my account</a> &nbsp;
+    <input type="submit" value="Login"> <br/> <br/>
     <a href="/register">Register</a>
 </index:form>
 
