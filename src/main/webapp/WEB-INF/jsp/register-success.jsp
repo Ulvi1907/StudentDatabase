@@ -10,6 +10,13 @@
 <html>
 <head>
     <title>Register</title>
+    <style>
+        h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
 <h1>Register Completed</h1>

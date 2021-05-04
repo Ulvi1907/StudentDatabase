@@ -1,9 +1,6 @@
 package ga.alili.register;
 
 import javax.validation.constraints.*;
-import java.text.DateFormat;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 public class RequestForm {
     @NotBlank
@@ -22,17 +19,6 @@ public class RequestForm {
     @Size(min = 8 , max = 20)
     private String password;
 
-    @Min(1950)
-    @Max(2021)
-    private int gradeYear;
-
-    public int getGradeYear() {
-        return gradeYear;
-    }
-
-    public void setGradeYear(int gradeYear) {
-        this.gradeYear = gradeYear;
-    }
 
     public String getName() {
         return name;
@@ -73,7 +59,6 @@ public class RequestForm {
                 ", surname='" + surname + '\'' +
                 ", student_id='" + student_id + '\'' +
                 ", password='" + password + '\'' +
-                ", gradeYear='" + gradeYear + '\'' +
                 '}';
     }
 }
