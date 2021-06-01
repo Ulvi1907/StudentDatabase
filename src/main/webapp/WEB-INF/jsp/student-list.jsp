@@ -10,29 +10,29 @@
 <html>
 <head>
     <title>Title</title>
-    <link type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" language="javascript"
             src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-<table id="employee_table" class="display" style="width:100%">
+<table id="student_table" class="display" style="width:100%">
     <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Surname</th>
-        <th>Student id</th>
+        <th>Point</th>
         <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${employees}" var="emp">
+    <c:forEach items="${students}" var="std">
         <tr>
-            <td>${emp.id}</td>
-            <td>${emp.name}</td>
-            <td>${emp.surname}</td>
-            <td>${emp.student_id}</td>
+            <td>${std.id}</td>
+            <td>${std.name}</td>
+            <td>${std.surname}</td>
+            <td>${std.point}</td>
             <td>N/A</td>
         </tr>
     </c:forEach>
@@ -41,7 +41,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#employee_table').DataTable();
+        $('#student_table').DataTable();
     } );
 </script>
 </body>
