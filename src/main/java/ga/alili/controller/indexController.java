@@ -23,13 +23,13 @@ public class indexController {
 //        binder.setValidator(registerFormValidator);
 //    }
 
-    @GetMapping("/")
-    public ModelAndView index(){
-        ModelAndView mav = new ModelAndView("index");
-        RequestForm form1 = new RequestForm();
-        mav.addObject("form1", form1);
-        return mav;
-    }
+//    @GetMapping("/")
+//    public ModelAndView index(){
+//        ModelAndView mav = new ModelAndView("index");
+//        RequestForm form1 = new RequestForm();
+//        mav.addObject("form1", form1);
+//        return mav;
+//    }
 
     @GetMapping("/forgot")
     public  ModelAndView forgot(){

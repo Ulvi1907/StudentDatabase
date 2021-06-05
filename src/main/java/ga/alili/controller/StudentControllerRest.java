@@ -22,6 +22,8 @@ public class StudentControllerRest {
 
     @GetMapping("/list/")
     public List<Student> getStudentList(){
+        List<Student> students = studentRepository.getStudentList();
+        students.addAll(1,students);
         return studentRepository.getStudentList();
     }
 
