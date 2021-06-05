@@ -105,9 +105,25 @@ public class StudentRepositoryImpl implements StudentRepository {
         return student;
     }
 
+    @Transactional
     @Override
     public Student updateStudent(Student student) {
-        return null;
+        MapSqlParameterSource param = new MapSqlParameterSource("a_id",0)
+                .addValue("a_name",student.getName())
+                .addValue("a_surname",student.getSurname())
+                .addValue("a_point", student.getPoint());
+        String sql= "insert into student(name, surname, point) " +
+                " values(:a_name, :a_surname, :a_point)";
+        KeyHolder keyHolders = new GeneratedKeyHolder();
+        int count = JdbcTemplate.update(sql, param, keyHolders, new String[]{"id"});
+        if (count>0){
+            long id = keyHolders.getKey().longValue();
+            student.setId(id);
+            log.debug("new student id = "+ id);
+        }
+//        Map<String, Object> map = addStudent.execute(params);
+//        student.setId((Long) map.get("p_id"));
+        return student;
     }
 
     @Transactional

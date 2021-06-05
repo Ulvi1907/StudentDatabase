@@ -58,6 +58,28 @@ public class StudentController {
         studentRepository.addStudent(student);
         return mav;
     }
+
+    @GetMapping("/student/delete/{id}")
+    public ModelAndView deleteStudent(@PathVariable(name = "id") Long id){
+        ModelAndView mav = new ModelAndView("index");
+        studentRepository.deleteStudent(id);
+        return mav;
+    }
+
+    @GetMapping("/student/update")
+    public ModelAndView editStudent() {
+        ModelAndView mav = new ModelAndView("student-update");
+        Student student = new Student();
+        mav.addObject("updateStudent", student);
+        return mav;
+    }
+    @PostMapping("/student/update")
+    public ModelAndView updateStudent(@ModelAttribute("updateStudent") Student student){
+        ModelAndView mav = new ModelAndView("index");
+        studentRepository.updateStudent(student);
+        return mav;
+    }
+
 //    @GetMapping("/home")
 //    public ModelAndView homePage(){
 //        ModelAndView mav = new ModelAndView("home");
