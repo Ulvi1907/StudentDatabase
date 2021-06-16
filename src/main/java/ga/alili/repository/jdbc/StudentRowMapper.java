@@ -3,9 +3,9 @@ package ga.alili.repository.jdbc;
 import ga.alili.domain.Student;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 @Component
 public class StudentRowMapper implements RowMapper<Student> {
     @Override

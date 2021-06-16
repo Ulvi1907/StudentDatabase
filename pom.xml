@@ -11,6 +11,7 @@
 	<groupId>ga.alili</groupId>
 	<artifactId>alili</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Student Database</name>
 	<description>Student Database</description>
 	<properties>
@@ -80,6 +81,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>studentdb</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
