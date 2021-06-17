@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
  <head>
     <title>Student list Ajax</title>
@@ -33,6 +34,8 @@
      <!-- Table -->
      <table id="students" class="table table-striped table-bordered" style="display: table" >
      <button class="nav-link" onclick="showStudentDetailsAdd()" style="color:black;">Add Student</button>
+     <br/>
+     <a href="/excel">Download Student List</a>
      <h2>Student List</h2> <br/>
      <tr>
         <th>Id</th>
@@ -41,6 +44,7 @@
         <th>Point</th>
         <th>Actions</th>
      </tr>
+
 
      </table>
 
